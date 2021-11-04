@@ -1,0 +1,47 @@
+{
+  "name": "colorwaver",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "setup": "yarn && cd ios && bundle install && bundle exec pod install",
+    "try-ios": "yarn && cd ios && pod install && cd .. && react-native run-ios --device",
+    "try-android": "adb reverse tcp:8081 tcp:8081 && yarn react-native run-android",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios --device",
+    "pods": "cd ios && bundle exec pod install",
+    "start": "react-native start",
+    "lint": "eslint .",
+    "typescript": "tsc --noEmit",
+    "release-ios": "scripts/release-ios.sh",
+    "release-android": "scripts/release-android.sh",
+    "postinstall": "patch-package"
+  },
+  "dependencies": {
+    "@react-native-community/blur": "^3.6.0",
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.4",
+    "react": "^17.0.2",
+    "react-native": "^0.66.0",
+    "react-native-animateable-text": "^0.8.0",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-haptic-feedback": "^1.11.0",
+    "react-native-reanimated": "^2.3.0-beta.2",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.8.0",
+    "react-native-static-safe-area-insets": "^2.1.1",
+    "react-native-vision-camera": "^2.9.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-typescript": "^7.15.0",
+    "@babel/runtime": "^7.15.4",
+    "@jamesacarr/eslint-formatter-github-actions": "^0.1.0",
+    "@react-native-community/eslint-config": "^3.0.1",
+    "@types/react": "^17.0.30",
+    "@types/react-native": "^0.65.6",
+    "eslint": "^7.32.0",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "patch-package": "^6.4.7",
+    "typescript": "^4.4.4"
+  }
+}
